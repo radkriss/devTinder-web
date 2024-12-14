@@ -1,0 +1,17 @@
+.liked {
+    background: green;
+    color: white;
+    padding: 10px;
+}
+
+.static {
+    background: white;
+    border: 1px solid black;
+    color: black;
+    padding: 10px;
+}
+
+.likeDiv {
+    transition: color 0.3s ease, transform 0.3s ease;
+    /* transform: scale(1.2);  */
+}

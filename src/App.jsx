@@ -15,6 +15,7 @@ import Pagination from "./practice/Pagination/index.jsx"
 import InfiniteScroll from "./practice/InfiniteScroll/index.jsx"
 import OtpLogin from "./practice/OtpLogin/index.jsx"
 import NestedComments from "./practice/NestedComments/index.jsx"
+import LikeButton from "./practice/LikeButton/index.jsx"
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
         <Route path="/" element={<Body />} >
           <Route path="/login" element={<div>Login page</div>} />
           <Route path="/test" element={<div>Test page</div>} />
-          <Route path="/practice" element={<NestedComments />} />
+          <Route path="/practice" element={<LikeButton />} />
         </Route>
       </Routes>
     </BrowserRouter>
