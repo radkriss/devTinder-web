@@ -1,0 +1,19 @@
+.flx {
+    display: flex;
+    gap: 20px;
+}
+
+.commentBox {
+    border: 1px solid #545454;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 10px 10px 40px;
+}
+
+.btnsComment input{
+    padding: 5px;
+    border: 1px solid #545454;
+    margin: 0px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}

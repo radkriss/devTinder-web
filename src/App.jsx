@@ -11,6 +11,10 @@ import ProgressBar from "./practice/ProgressBar/index.jsx"
 import Modal from "./practice/Modal/index.jsx"
 import PasswordGenerator from "./practice/PasswordGenerator/index.jsx"
 import PasswordValidation from "./practice/PasswordValidation/index.jsx"
+import Pagination from "./practice/Pagination/index.jsx"
+import InfiniteScroll from "./practice/InfiniteScroll/index.jsx"
+import OtpLogin from "./practice/OtpLogin/index.jsx"
+import NestedComments from "./practice/NestedComments/index.jsx"
 
 function App() {
 
@@ -21,7 +25,7 @@ function App() {
         <Route path="/" element={<Body />} >
           <Route path="/login" element={<div>Login page</div>} />
           <Route path="/test" element={<div>Test page</div>} />
-          <Route path="/practice" element={<PasswordValidation />} />
+          <Route path="/practice" element={<NestedComments />} />
         </Route>
       </Routes>
     </BrowserRouter>
