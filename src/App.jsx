@@ -16,6 +16,7 @@ import InfiniteScroll from "./practice/InfiniteScroll/index.jsx"
 import OtpLogin from "./practice/OtpLogin/index.jsx"
 import NestedComments from "./practice/NestedComments/index.jsx"
 import LikeButton from "./practice/LikeButton/index.jsx"
+import Accordion from "./practice/Accordion/index.jsx"
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
         <Route path="/" element={<Body />} >
           <Route path="/login" element={<div>Login page</div>} />
           <Route path="/test" element={<div>Test page</div>} />
-          <Route path="/practice" element={<LikeButton />} />
+          <Route path="/practice" element={<Accordion />} />
         </Route>
       </Routes>
     </BrowserRouter>
