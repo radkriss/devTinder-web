@@ -97,3 +97,41 @@ export const quickSort = (arr) => {
     }
     return [...quickSort(left), pivot, ...quickSort(right)]
 }
+
+export const myLogic = (s, startIndices, endIndices) => {
+    let result = new Array(startIndices.length).fill(0);
+    for (let i=0; i < startIndices.length;i++) {
+        let str = s.substring(startIndices[i] - 1, endIndices[i]);
+        console.log(str);
+        let c = str.split("|");
+        for (let j=0; j< c.length;j++) {
+            if (j !== 0 && j !== c.length - 1) {
+                result[i] = result[i] + c[j].length
+            }
+        }
+    }
+    return result;
+}
+
+// function minimumBribes(q) {
+//     let bribes = 0;
+  
+//     for (let i = q.length - 1; i >= 0; i--) {
+//       if (q[i] - (i + 1) > 2) {
+//         console.log("Too chaotic");
+//         return;
+//       }
+  
+//       for (let j = Math.max(0, q[i] - 2); j < i; j++) {
+//         if (q[j] > q[i]) {
+//           bribes++;
+//         }
+//       }
+//     }
+//     console.log(bribes);
+// }
+
+// [1, 2, 5, 3, 7, 8, 6, 4]
+
+// i = 7
+// 4 - 7 + 1 > 2

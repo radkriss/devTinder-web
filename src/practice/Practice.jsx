@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Practice = () => {
 
     const [newTodo, setNewTodo] = useState("");
     const [todoList, setTodoList] = useState([]);
+
+    const myref = useRef(null);
 
     const changeTodo = (e) => {
         setNewTodo(e.target.value)
@@ -42,11 +44,16 @@ const Practice = () => {
         }
     }
 
+    useEffect(() => {
+        myref.current.focus();
+    },[])
+
     return (
         <div>
             <div>Practice page</div>
             <div>
                 <input type="text" value={newTodo} onChange={changeTodo} onKeyDown={handleKeyDown} />
+                <input type="text" ref={myref} />
                 {todoList.map((todo, index) => {
                     return <div className="todos">
                         {!todo.edit && <div>{todo.value}</div>}

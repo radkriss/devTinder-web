@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { binarySearchRecursive, binarysearchIterative, bubbleSort, insertionSort, quickSort } from "./logics"
+import { binarySearchRecursive, binarysearchIterative, bubbleSort, insertionSort, quickSort, myLogic } from "./logics"
 
 const Logics = () => {
 
@@ -7,7 +7,7 @@ const Logics = () => {
         // console.log(binarysearchIterative([1,2,3,4,5], 2))
         // console.log(binarysearchIterative([1,2,3,4,5], 20))
         // console.log(binarysearchIterative([1,2,3,4,5], 4))
-        console.log(quickSort([8,20, -2, 4, -6]));
+        console.log(myLogic("|**|*|*", [1,1],[5,6]));
     }, [])
     return (
         <div>
