@@ -8,7 +8,7 @@
     text-align: center;
 }
 
-input[type=button] {
+.calContainer input[type=button] {
     padding: 10px;
     margin: 2px;
     border: 1px solid #000;

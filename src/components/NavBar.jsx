@@ -1,6 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import userSlice from '../utils/userSlice'
 
 const NavBar = () => {
+
+  const user = useSelector((store) => store.user);
+  console.log(user);
   return (
     <div className="navbar bg-base-300">
         <div className="flex-1">
@@ -10,7 +15,7 @@ const NavBar = () => {
           <div className="form-control">
             <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
           </div>
-          <div className="dropdown dropdown-end mx-4">
+          {user && <div className="dropdown dropdown-end mx-4">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
                 <img
@@ -30,7 +35,7 @@ const NavBar = () => {
               <li><a>Settings</a></li>
               <li><a>Logout</a></li>
             </ul>
-          </div>
+          </div>}
         </div>
       </div>
   )
