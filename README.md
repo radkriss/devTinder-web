@@ -41,7 +41,7 @@ Next we need to get our code - From github
 git clone https format - it will be cloned
 Get both backend and front end code
 Now lets get our front end ready
-U will first need to so npm install
+U will first need to do npm install
 then npm run build -> since its production (for local we do npm run dev right)
 Now we need to use nginx to host our application - acts as a http server
 sudo apt update -> updates ubuntu and packages
@@ -49,17 +49,18 @@ sudo apt install nginx
 sudo systemctl start nginx
 sudo systemctl enable nginx
 Copy code from dist(build files) to /var/www/html/
-Go to the folder devTinder
+Go to the folder devTinder-web
 sudo scp -r dist/* /var/www/html/
 Now you are all done !
 
 If u go to AWS console -> copy the public ip and hit in browser -> u will not get the app
 this is because AWS blocks all ur ports
 nginx is deployed on port number 80
-so u have to enalbe this port 80 to make it work
+so u have to enable this port 80 to make it work
 How to do this
 Now go to AWS -> go to the instance id to see details
 click security -> security group
 there will be an inboud rule for port 22
 Add inbound rule with port 80 and save
 You are good to go now -> hit the public ip now !
+Note once u stop an instance and restart, the public ip will change, so try with new ip
