@@ -103,7 +103,7 @@ sudo nano /etc/nginx/sites-available/default
 Now go to server_name <ip_of_aws_machine> or <domain_name>
 add another rule to redirect /api/ to localhost:7777/ -> got it from chatgpt
 location /api/ {
-    proxy_pass http://localhost:7777/;
+    proxy_pass http://localhost:3000/;
     proxy_http_version 1.1;
     proxy_set_header Upgrade $http_upgrade;
     proxy_set_header Connection 'upgrade';
