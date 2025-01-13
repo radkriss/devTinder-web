@@ -113,9 +113,56 @@ location /api/ {
 restart nginx
 sudo systemctl restart nginx
 Now if u try ip/api/feed -> u will get result in browser
+Note: BY doing this, the api calls in local will fail since we have changed the url to /api
+Hence use location.hostname === "localhost" ? "http:localhost:777" : "/api"
 
 Now we need to update our api calling in react app by changing the url to /api
 since we don't specify the ip/localhost it will be default take the machine ip
 push it to github
 pull code in AWS
 now if u try it will not work because u have to again build and copy the code to /var/www/html
+
+Adding domain name:
+Create a domain name from godaddy
+create a profile in cloudfare - used to manage dnsname
+in godaddy change the nameserver of the new dnsname to the nameserver of cloudfare - so that cloudfare manages the dns link
+it will take some time
+once this is done, go to cloudfare and register the AWS ip to the dnsname
+You are all set. Hitting devtinder.in will take u to our site now !
+
+Sending Emails through Amazon SES:
+We will need to create user in AWS console
+Go to AWS console
+Search for IAM
+Create a User
+Attach policies to the user
+Search for amazon ses - full access
+Create user
+
+Now go back to console home page
+search for amazon SES
+Click -> View get set up page
+Create identity
+Now we have to verify the DNS name - to do this we have the configure the CNAME in DNS
+we manage the DNS in cloudfare remember ?
+so copy the 3 CNAME in AWS, and register it in Cloudfare
+We can also use our gmail to verify
+You will need to copy some secret key and credentials from aws console to the code - check it
+
+Now we need to write code to send email
+We need sesclient - install it
+npm i @aws-sdk/client-ses
+Copy code for sesclient, while configuring provide the aws access key and secret key which u got from aws console and saved it in .env file
+After creating the SES client, u need to configure the from email, to email and content etc as per the doc
+Now when u create a connection requet, call this function, u will recieve the email
+
+dotenv:
+We have to store the secret keys and passowrd safely and not push to git repo
+hence what can we do ?
+install a node package dotenv
+create a file in root directory of ur app .env
+now add constants like SECRET_KEY="<ur_key>"
+now use process.env.SECRET_KEY at the place where u use the key
+Do not push this code to git
+In production u need to create a file manually with prod credentials and use it
+We can also create multiple env files for diff environments like .env.prod, .env.local and use --env-file=.env.prod node index.js while starting the application
